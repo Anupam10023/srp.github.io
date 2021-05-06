@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+    <title>SRP</title>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-family:Poppins;
+        }
+        h1{
+            font-size: 50px;
+            font-family:Audiowide;
+        }
+        p{
+            font-size: 24px;
+            line-height: 50px;
+        }
+        .navbar{
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            height: 85px;
+            z-index: 1;
+            background-color: black;
+            font-color:blue;
+        }
+
+        .nav{
+            display: flex;
+            justify-content: right;
+            list-style: none;
+            margin-right: 15%;
+            margin-right: 50px;
+            font-family:Calibri;
+        }
+
+        .logo {
+            flex: 1 1 auto;
+            margin-left: 10%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            font-size: 35px;
+        }
+        img{
+            width: 20%;
+        }
+        a{
+            margin: 15px;
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        a:hover{
+            color: #000;
+        }
+        .banner-area{
+            position: relative;
+            background-image: url(img1.jpg);
+            max-width: 100%;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .about-area, .port-area, .service-area, .contact-area{
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 100%;
+            height: 900px;
+        }
+        .text-part{
+            width: 100%;
+            height:100%;
+            text-align:center;
+            color:black ;
+            padding-left:200 px;
+            background-image: url(img5.jpg);
+
+
+        }        
+        .login-part{
+            width:100%;
+            height:70%;
+            text-align:center;
+            background-image: url(img3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        .contact-part{
+            width:100%;
+            height:100%;
+            float:center;
+            color:white;
+            text-align:center;
+            background-image: url(img2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            font-weight: bold;
+
+        }
+
+        .about-area{
+            background-color: #fefefe;
+            float:center;
+
+        }
+        .port-area{
+            background-color: #262626;
+            color: #fff;
+        }
+        .service-area{
+            background-color: #fefefe;
+            margin-top:10%;
+
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            padding: 16px;
+
+
+
+        }
+        input[type=text], input[type=password] {
+            width: 300px;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+        .topnav-right {
+            float: right;
+        }
+        a:hover {
+            color: #00ccff;
+        } 
+        .d{
+           background-image: url(img6.jpg); 
+        }
+    </style>
+
+    <script>
+
+        function validate() {
+
+            var a = document.form1.Email_id.value;
+            var b = document.form1.Password.value;
+            var c = document.form1.Name.value;
+            var d = document.form1.Roll_no.value;
+            var e = document.form1.Mobile_no.value;
+            var f = document.form1.Course.value;
+            var g = document.form1.DOB.value;
+            var h = document.form1.Address.value;
+
+            if (a == "" || a == null) {
+                alert("Email_id can't be empty !!");
+                return false;
+            }
+            if (a.indexOf('@') <= 0) {
+
+                alert("Invalid @ position in email_id !!");
+                return false;
+            }
+            if (a.charAt(a.length-4) != '.') {
+
+                alert("Invalid email_id must contain 3 letters after dot(.) !");
+                return false;
+            }
+            if (b == "" || b.length < 8) {
+
+                alert("Invalid Password! minimum length required is 8 !!");
+                return false;
+            }
+
+            if (c == "" || c == null) {
+
+                alert("Name can't be empty !!");
+                return false;
+            }
+            if (d == "" || d == null) {
+                alert("Roll No. can't be empty !!");
+                return false;
+            }
+            if (e == "" || e == null) {
+
+                alert("Mobile No. can't be empty !!");
+                return false;
+            }
+            if (e.length < 10) {
+
+                alert("Length of Mobile No. must be 10 !!");
+                return false;
+            }
+            if (f == "" || f == null) {
+
+                alert("Course can't be empty !!");
+                return false;
+            }
+            if (g == "" || g == null) {
+
+                alert("Date_Of_Birth can't be empty !!");
+                return false;
+            }
+            if (h == "" || h == null) {
+
+                alert("Address can't be empty !!");
+                return false;
+            } 
+                alert("Registration Successful..!! ");
+                window.location.reload();
+            
+        }
+
+
+    </script>
+
+    <body>
+        <div class="navbar">
+            <a href="https://www.bitmesra.ac.in/" target="_blank"><img src="bit.png" style="width:75px;height:70px;margin-left:30px;"></a><a href="https://www.bitmesra.ac.in/"class="logo" style="color:white;margin-left:-10px;"  target="_blank"><h1 style="font-size:20px;">Birla Institute Of Technology,  Mesra</h1></a>
+            <ul class="nav">
+                <li><a style="color:white;" href="#home">HOME</a></li>
+                <li><a style="color:white;" href="#register">REGISTER</a></li>
+                <li><a style="color:white;" href="#login">Check Details</a></li>
+                <li><a style="color:white;" href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <section class="banner-area" id="home"><br><br><br><br><br>
+            <h5><marquee behavior='alternate' direction='left' scrollamount='15' onmouseover='this.stop()' onmouseout='this.start()'style="font-size:40px;color:#800040;">*Student Registration Portal*</marquee></h5>    
+        </section>
+
+
+        <section class="about-area" id="register">
+            <div class="text-part">
+                <form  name="form1"  action="http://localhost:8080/crud/form.jsp"> 
+                    <div class="container" id="stu_form"><br><br>
+                        <h1 style="text-align:center;color:blue;font-family:algerian;" >Student Registration Form </h1>
+
+                        <hr>
+                        <label for="name"style="margin-left:30px;"><b>Name </b></label>&nbsp
+                        <input type="text" placeholder="Enter Your Full Name " name="Name" required><br>
+
+                        <label for="number"style="margin-left:25px;"><b>Roll no </b></label>&nbsp
+                        <input type="text" placeholder="Enter Your Roll No:  " name="Roll_no" required><br>
+
+                        <label for="email" style="margin-left:40px;"><b>Email</b></label>&nbsp
+                        <input type="text" placeholder="Enter Email" name="Email_id" id="email" required>
+
+                        <br><label for="psw" style="margin-left:20px;"><b>Password</b></label>&nbsp
+                        <input type="password" placeholder="Enter Password" name="Password" id="psw" required><br>
+
+                        <label for="dob" style="margin-left:48px;"><b>DOB </b></label>&nbsp
+                        <input type="text" placeholder="Format :DD/MM/YYYY "  " name="DOB"required><br>
+
+                        <label for="address" style="margin-left:30px;"><b>Address </b></label>&nbsp
+                        <input type="text" placeholder="Enter Your Address  " name="Address"required><br>
+
+                        <label for="Gender" style="margin-left:-60px;"><b>Gender :</b></label>&nbsp&nbsp
+                        <input type="radio" id="male" name="Gender" value="male">
+                        <label for="male">Male</label>&nbsp
+                        <input type="radio" id="female" name="Gender" value="female">
+                        Female&nbsp
+                        <input type="radio" id="other" name="Gender" value="other">
+                        <label for="other">Other</label><br>  
+
+                        <label for="number" style="margin-left:10px;"><b>Mobile No </b></label>&nbsp
+                        <input type="text" placeholder="Enter Your Mobile No:  " name="Mobile_no"required><br>
+
+                        <label for="course" style="margin-left:30px;"><b>Course </b></label>&nbsp
+                        <input type="text" placeholder="Enter Course:  " name="Course"required><br>
+
+                        <button type="submit" class="registerbtn" name="submit" Onclick="validate()">Register</button>&nbsp&nbsp&nbsp&nbsp<button type="reset" class="registerbtn">Reset</button>
+                        <form>
+
+                    </div>
+                </form> 
+                <form action="http://localhost:8080/crud/see.jsp">
+                    
+                    <h1>Click below to view Database</h1>
+                    <button type="submit">View Database</button>
+                </form>
+            </div>  
+        </section>
+
+
+
+        <section class="service-area" id="login">
+            <div class="login-part"><hr>
+                <form action="http://localhost:8080/crud/log.jsp">
+                    <div class="container">
+                        <h1 style="text-align:center;"> Check Your Details </h1>
+
+
+
+                        <label for="number"><b>Roll no </b></label>
+                        <input type="text" placeholder="Enter Your Roll No:  " name="Roll_no" required><br>
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="Password" id="psw" required><br> 
+                        <button type="submit" class="registerbtn" name="submit" style="margin-left:125px;" >Check Details</button>&nbsp&nbsp<h style="font-color:#3366ff;">? Not registered<a href="#stu_form"><b>click here</b></a></h>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="contact-area" id="contact">
+            <div class="contact-part"><hr><br><br>
+                <h1>Contact Us</h1>
+                <h1><b>Birla Institute of Technology</b><h1
+                        <h2>Mesra,Ranchi-India</h2>
+                        <button type="submit" name="submit" style="margin-left:50px;" ><a href="https://www.bitmesra.ac.in/BIT_Campus_Directory?cid=1" target="_blank" >For more details,click here</a></button>
+                        <h2 style="margin-top:10px;font-size:40px"><b>Visit Us @</b></h2><br>
+
+                        <a href="https://www.linkedin.com/school/b.i.t.-mesra-ranchi/?originalSubdomain=in" target="_blank"><img src="in.png" style="width:50px;height:50px;margin-left:30px;margin-top:-55px"></a>&nbsp
+                        <a href="https://www.facebook.com/BITMesraRanchi/" target="_blank"><img src="face.jpg" style="width:58px;height:50px;margin-top:-55px"></a>
+                        <a href="https://www.instagram.com/bitmesra1955/?hl=en" target="_blank"><img src="insta.jpg" style="width:58px;height:50px;margin-top:-55px"></a>
+                        <a href="https://twitter.com/bit_mesra?lang=en" target="_blank"><img src="twi.jpg" style="width:58px;height:50px;margin-top:-55px"></a>
+                        </div>
+                        </section>
+                        </body>
+                        </html>
